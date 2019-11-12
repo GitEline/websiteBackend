@@ -3,16 +3,16 @@ package nl.foodbook.websiteBackend.domain;
 import javax.persistence.*;
 
 @Entity
-public class DishIngredient {
+public class Component {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long dishIngredientId;
+    private long componentId;
     @OneToOne
     private Ingredient ingredient;
     private Unit unit;
     private double quantity;
-    private String ingredientQuantity;
+
 
     @ManyToOne
     Dish dish;
@@ -36,20 +36,17 @@ public class DishIngredient {
     public void setQuantity(double quantity) {
         this.quantity = quantity;
     }
-    public String getIngredientQuantity() {
-        return ingredientQuantity;
+
+
+
+    public Component() {
     }
 
-
-    public DishIngredient() {
-    }
-
-    public DishIngredient(Ingredient ingredient, Unit unit, double quantity) {
+    public Component(Ingredient ingredient, Unit unit, double quantity) {
         this();
         this.ingredient = ingredient;
         this.unit = unit;
         this.quantity = quantity;
-        this.ingredientQuantity = quantity + unit.toString() + ingredient;
     }
 
 

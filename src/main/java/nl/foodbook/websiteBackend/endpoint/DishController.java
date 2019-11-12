@@ -23,7 +23,7 @@ public class DishController {
 
     @GetMapping("/dish")
     public List<Dish> getDishes(){
-        return (List<Dish>) dishService.findAll();
+        return (List<Dish>) dishService.findAllDishes();
     }
 
     @PostMapping("/dish")

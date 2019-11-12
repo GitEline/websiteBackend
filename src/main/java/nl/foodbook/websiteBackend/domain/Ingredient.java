@@ -12,20 +12,21 @@ public class Ingredient {
     private String nameIngredient;
 //    private List<String> tag;
     @OneToOne(mappedBy = "ingredient")
-    DishIngredient dishIngredient;
+    Component dishIngredient;
+
+    public Ingredient(String wortel, Unit g, double v) {
+    }
 
 
     public String getNameIngedrient() {
         return nameIngredient;
     }
-
     public void setNameIngedrient(String nameIngedrient) {
         this.nameIngredient = nameIngredient;
     }
 //    public List<String> getTag() {
 //        return tag;
 //    }
-
 //
 //    public void setTag(List<String> tag) {
 //        this.tag = tag;
@@ -35,7 +36,7 @@ public class Ingredient {
     public Ingredient() {
     }
 
-    public Ingredient(String nameIngredient, List<String> tag) {
+    public Ingredient(String nameIngredient/*, List<String> tag*/) {
         this();
         this.nameIngredient = nameIngredient;
 //        this.tag = tag;

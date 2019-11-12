@@ -16,7 +16,7 @@ public class DishService {
     }
 
 
-    public Iterable<Dish> findAll(){
+    public Iterable<Dish> findAllDishes(){
         return dishRepository.findAll();
     }
 

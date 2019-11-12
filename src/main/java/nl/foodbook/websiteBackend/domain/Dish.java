@@ -1,7 +1,7 @@
 package nl.foodbook.websiteBackend.domain;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 public class Dish {
@@ -11,8 +11,8 @@ public class Dish {
     private long dishId;
     private String dishTitle;
     @OneToMany//(mappedBy = "dish")
-    private Set<DishIngredient> ingredients;
-    private StringBuilder stappen;
+    private List<Component> allComponents;
+    private String/*Builder*/ stappen;
 
 
 
@@ -25,29 +25,28 @@ public class Dish {
     public void setDishTitle(String dishTitle) {
         this.dishTitle = dishTitle;
     }
-    public Set<DishIngredient> getIngredients() {
-        return ingredients;
+    public List<Component> getAllComponents() {
+        return allComponents;
     }
-    public void setIngredientList(Set<DishIngredient> ingredients) {
-        this.ingredients = ingredients;
+    public void setAllComponents(List<Component> allComponents) {
+        this.allComponents = allComponents;
     }
-    public StringBuilder getStappen() {
+    public String/*Builder*/ getStappen() {
         return stappen;
     }
-    public void setStappen(StringBuilder stappen) {
+    public void setStappen(String/*Builder*/ stappen) {
         this.stappen = stappen;
     }
 
 
-    public Dish(String dishTitle, String appel, StringBuilder sb) {
-    }
+
     public Dish(){
 
     }
-    public Dish(String dishTitle, Set<DishIngredient> ingredients, StringBuilder stappen) {
+    public Dish(String dishTitle, List<Component> ingredients, String/*Builder*/ stappen) {
         this();
         this.dishTitle = dishTitle;
-        this.ingredients = ingredients;
+        this.allComponents = allComponents;
         this.stappen = stappen;
     }
 
