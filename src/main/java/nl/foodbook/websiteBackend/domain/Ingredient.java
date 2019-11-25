@@ -11,8 +11,8 @@ public class Ingredient {
     private long ingredientId;
     private String nameIngredient;
 //    private List<String> tag;
-    @OneToOne(mappedBy = "ingredient")
-    Component dishIngredient;
+//    @OneToOne(mappedBy = "ingredient") //hoeft niet hier
+//    Component dishIngredient;
 
     public Ingredient(String wortel, Unit g, double v) {
     }

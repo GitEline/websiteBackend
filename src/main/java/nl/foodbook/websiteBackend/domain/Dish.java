@@ -10,8 +10,8 @@ public class Dish {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long dishId;
     private String dishTitle;
-    @OneToMany//(mappedBy = "dish")
-    private List<Component> allComponents;
+//    @OneToMany//(mappedBy = "dish")
+//    private List<Component> allComponents;
     private String/*Builder*/ stappen;
 
 
@@ -25,12 +25,12 @@ public class Dish {
     public void setDishTitle(String dishTitle) {
         this.dishTitle = dishTitle;
     }
-    public List<Component> getAllComponents() {
-        return allComponents;
-    }
-    public void setAllComponents(List<Component> allComponents) {
-        this.allComponents = allComponents;
-    }
+//    public List<Component> getAllComponents() {
+//        return allComponents;
+//    }
+//    public void setAllComponents(List<Component> allComponents) {
+//        this.allComponents = allComponents;
+//    }
     public String/*Builder*/ getStappen() {
         return stappen;
     }
@@ -43,10 +43,10 @@ public class Dish {
     public Dish(){
 
     }
-    public Dish(String dishTitle, List<Component> ingredients, String/*Builder*/ stappen) {
+    public Dish(String dishTitle, List<Component> ingredients/*, String/*Builder/ stappen*/) {
         this();
         this.dishTitle = dishTitle;
-        this.allComponents = allComponents;
+//        this.allComponents = allComponents;
         this.stappen = stappen;
     }
 
