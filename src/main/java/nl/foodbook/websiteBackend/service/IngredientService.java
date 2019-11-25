@@ -20,8 +20,8 @@ public class IngredientService {
         return ingredientRepository.findAll();
     }
 
-    public void addIngredient(Ingredient ingredient){
-        ingredientRepository.save(ingredient);
+    public Ingredient addIngredient(Ingredient ingredient){
+        return ingredientRepository.save(ingredient);
     }
 
 

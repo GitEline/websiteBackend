@@ -1,12 +1,9 @@
 package nl.foodbook.websiteBackend.repository;
 
+import nl.foodbook.websiteBackend.domain.Recipe;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import nl.foodbook.websiteBackend.domain.Component;
 
 @Repository
-public interface ComponentRepository extends CrudRepository<Component, Long> {
-
-
-
+public interface RecipeRepository extends CrudRepository<Recipe, Long> {
 }

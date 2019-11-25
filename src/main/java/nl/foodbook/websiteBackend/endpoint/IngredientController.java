@@ -19,10 +19,10 @@ public class IngredientController {
         this.ingredientService = ingredientService;
     }
 
-    @GetMapping("/ingredient")
-    public List<Ingredient> getDishes(){
-        return (List<Ingredient>) ingredientService.findAllIngredients();
-    }
+//    @GetMapping("/ingredient")
+//    public List<Ingredient> getRecipes(){
+//        return (List<Ingredient>) ingredientService.findAllIngredients();
+//    }
 
 
 

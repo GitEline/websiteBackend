@@ -3,19 +3,17 @@ package nl.foodbook.websiteBackend.domain;
 import javax.persistence.*;
 
 @Entity
-public class Component {
+public class PartOfDish {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long componentId;
+    private long partOfDishId;
     @OneToOne
     private Ingredient ingredient;
     private Unit unit;
     private double quantity;
-
-
     @ManyToOne
-    Dish dish;
+    private Recipe recipe;
 
 
     public Ingredient getIngredient() {
@@ -39,12 +37,13 @@ public class Component {
 
 
 
-    public Component() {
+    public PartOfDish() {
     }
 
-    public Component(Ingredient ingredient, Unit unit, double quantity) {
+    public PartOfDish(Ingredient ingredient, Recipe recipe, Unit unit, double quantity) {
         this();
         this.ingredient = ingredient;
+        this.recipe = recipe;
         this.unit = unit;
         this.quantity = quantity;
     }

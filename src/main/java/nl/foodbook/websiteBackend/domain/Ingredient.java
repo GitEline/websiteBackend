@@ -1,7 +1,6 @@
 package nl.foodbook.websiteBackend.domain;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Ingredient {
@@ -10,12 +9,7 @@ public class Ingredient {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long ingredientId;
     private String nameIngredient;
-//    private List<String> tag;
-//    @OneToOne(mappedBy = "ingredient") //hoeft niet hier
-//    Component dishIngredient;
 
-    public Ingredient(String wortel, Unit g, double v) {
-    }
 
 
     public String getNameIngedrient() {
@@ -24,22 +18,14 @@ public class Ingredient {
     public void setNameIngedrient(String nameIngedrient) {
         this.nameIngredient = nameIngredient;
     }
-//    public List<String> getTag() {
-//        return tag;
-//    }
-//
-//    public void setTag(List<String> tag) {
-//        this.tag = tag;
-//    }
+
 
 
     public Ingredient() {
     }
-
-    public Ingredient(String nameIngredient/*, List<String> tag*/) {
+    public Ingredient(String nameIngredient) {
         this();
         this.nameIngredient = nameIngredient;
-//        this.tag = tag;
     }
 
 
