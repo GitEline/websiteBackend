@@ -10,7 +10,7 @@ public class PartOfDish {
     private long partOfDishId;
     @OneToOne
     private Ingredient ingredient;
-    private Unit unit;
+    private String unit;
     private double quantity;
     @ManyToOne
     private Recipe recipe;
@@ -22,11 +22,11 @@ public class PartOfDish {
     public void setIngredient(Ingredient ingredient) {
         this.ingredient = ingredient;
     }
-    public Unit getUnit() {
+    public String getUnit() {
         return unit;
     }
     public void setUnit(Unit unit) {
-        this.unit = unit;
+        this.unit = unit.getValue();
     }
     public double getQuantity() {
         return quantity;
@@ -44,7 +44,7 @@ public class PartOfDish {
         this();
         this.ingredient = ingredient;
         this.recipe = recipe;
-        this.unit = unit;
+        this.unit = unit.getValue();
         this.quantity = quantity;
     }
 

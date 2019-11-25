@@ -11,14 +11,13 @@ public class Ingredient {
     private String nameIngredient;
 
 
-
-    public String getNameIngedrient() {
+    public long getIngredientId(){return ingredientId;}
+    public String getNameIngredient() {
         return nameIngredient;
     }
-    public void setNameIngedrient(String nameIngedrient) {
+    public void setNameIngredient(String nameIngredient) {
         this.nameIngredient = nameIngredient;
     }
-
 
 
     public Ingredient() {

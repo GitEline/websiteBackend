@@ -21,13 +21,13 @@ public class RecipeController {
     }
 
 
-    @GetMapping("/dish")
+    @GetMapping("/recipe")
     public List<Recipe> getRecipes(){
         return (List<Recipe>) recipeService.findAllRecipes();
     }
 
     @PostMapping("/recipe")
-    void addDish(@RequestBody Recipe recipe) {
+    void addRecipe(@RequestBody Recipe recipe) {
         recipeService.addRecipe(recipe);
     }
 
