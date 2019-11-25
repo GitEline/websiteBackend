@@ -21,12 +21,12 @@ public class PartOfDishController {
     }
 
 
-    @GetMapping("/partOfDish")
+    @GetMapping("/partofdish")
     public List<PartOfDish> getPartOfDishes(){
         return (List<PartOfDish>) partOfDishService.findAllPartOfDish();
     }
 
-    @PostMapping("/partOfDish")
+    @PostMapping("/partofdish")
     void addPartOfDish(@RequestBody PartOfDish partOfDish) {
         partOfDishService.addPartOfDish(partOfDish);
     }
