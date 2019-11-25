@@ -5,6 +5,8 @@ import nl.foodbook.websiteBackend.repository.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 
 @Service
 public class RecipeService {
@@ -21,6 +23,19 @@ public class RecipeService {
     public Iterable<Recipe> findAllRecipes(){
         return recipeRepository.findAll();
     }
+
+    public Optional<Recipe> findByRecipeId(Long recipeId){
+        return recipeRepository.findById(recipeId);
+    }
+
+    public Iterable<Recipe> findByRecipeTitle(String recipeTitle){
+        return recipeRepository.findByRecipeTitle(recipeTitle);
+    }
+
+    public Iterable<Recipe> findByRecipeTitleLike(String recipeTitle){
+        return recipeRepository.findByRecipeTitleLike(recipeTitle);
+    }
+
 
     public Recipe addRecipe(Recipe recipe){
         return recipeRepository.save(recipe);

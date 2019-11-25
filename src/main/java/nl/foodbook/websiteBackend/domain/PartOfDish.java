@@ -7,7 +7,7 @@ public class PartOfDish {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long partOfDishId;
+    private Long partOfDishId;
     @OneToOne
     private Ingredient ingredient;
     private String unit;
@@ -16,6 +16,9 @@ public class PartOfDish {
     private Recipe recipe;
 
 
+    public Long getPartOfDishId() {
+        return partOfDishId;
+    }
     public Ingredient getIngredient() {
         return ingredient;
     }

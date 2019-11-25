@@ -2,14 +2,13 @@ package nl.foodbook.websiteBackend.endpoint;
 
 
 import nl.foodbook.websiteBackend.domain.Ingredient;
+import nl.foodbook.websiteBackend.domain.Recipe;
 import nl.foodbook.websiteBackend.service.IngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class IngredientController {
@@ -26,7 +25,19 @@ public class IngredientController {
         return (List<Ingredient>) ingredientService.findAllIngredients();
     }
 
-    @PostMapping("/ingredient")
+    @GetMapping(path = "/ingredient/{ingredientId}")
+    public Optional<Ingredient> findIngredientById(@PathVariable Long ingredientId) {
+        return ingredientService.findByIngredientId(ingredientId);
+    }
+
+
+    @GetMapping(path = "/ingredient/nameingredient/{nameIngredient}")
+    public Iterable<Ingredient> findByIngredientName(@PathVariable String nameIngredient){
+        return ingredientService.findByIngredientName(nameIngredient);
+    }
+
+
+        @PostMapping("/ingredient")
     public void addIngredient(@RequestBody Ingredient ingredient) {
         ingredientService.addIngredient(ingredient);
     }

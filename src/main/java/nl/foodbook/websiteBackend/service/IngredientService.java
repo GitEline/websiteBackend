@@ -1,10 +1,13 @@
 package nl.foodbook.websiteBackend.service;
 
 import nl.foodbook.websiteBackend.domain.Ingredient;
+import nl.foodbook.websiteBackend.domain.Recipe;
 import nl.foodbook.websiteBackend.repository.IngredientRepository;
 import nl.foodbook.websiteBackend.repository.PartOfDishRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class IngredientService {
@@ -20,6 +23,14 @@ public class IngredientService {
 
     public Iterable<Ingredient> findAllIngredients() {
         return ingredientRepository.findAll();
+    }
+
+    public Optional<Ingredient> findByIngredientId(Long ingredientId){
+        return ingredientRepository.findById(ingredientId);
+    }
+
+    public Iterable<Ingredient> findByIngredientName(String nameIngredient){
+        return ingredientRepository.findByNameIngredient(nameIngredient);
     }
 
     public Ingredient addIngredient(Ingredient ingredient){

@@ -3,12 +3,10 @@ package nl.foodbook.websiteBackend.endpoint;
 import nl.foodbook.websiteBackend.domain.Recipe;
 import nl.foodbook.websiteBackend.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class RecipeController {
@@ -24,6 +22,22 @@ public class RecipeController {
     @GetMapping("/recipe")
     public List<Recipe> getRecipes(){
         return (List<Recipe>) recipeService.findAllRecipes();
+    }
+
+    @GetMapping(path = "/recipe/{recipeId}")
+    public Optional<Recipe> findRecipeById(@PathVariable Long recipeId) {
+        return recipeService.findByRecipeId(recipeId);
+    }
+
+    @GetMapping(path = "/recipe/recipeTitle/{recipeTitle}")
+    public Iterable<Recipe> findByRecipeTitle(@PathVariable String recipeTitle){
+        return recipeService.findByRecipeTitle(recipeTitle);
+    }
+
+
+    @GetMapping(path = "/recipe/recipetitlelike/{recipeTitle}")
+    public Iterable<Recipe> findByRecipeTitleLike(@PathVariable String recipeTitle){
+        return recipeService.findByRecipeTitleLike(recipeTitle);
     }
 
     @PostMapping("/recipe")

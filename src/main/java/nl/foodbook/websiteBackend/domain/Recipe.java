@@ -7,11 +7,11 @@ public class Recipe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long recipeId;
+    private Long recipeId;
     private String recipeTitle;
 
 
-    public long getRecipeId() {
+    public Long getRecipeId() {
         return recipeId;
     }
     public String getRecipeTitle() {
