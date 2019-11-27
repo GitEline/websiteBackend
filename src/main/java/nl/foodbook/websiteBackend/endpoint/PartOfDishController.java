@@ -18,6 +18,9 @@ public class PartOfDishController {
         this.partOfDishService = partOfDishService;
     }
 
+    @GetMapping("/partofdish/recipe/{recipeId}")
+    public Iterable<PartOfDish> findByRecipe(@PathVariable Long recipeId){return partOfDishService.findByRecipeRecipeId(recipeId);
+    }
 
     @GetMapping("/partofdish")
     public List<PartOfDish> getPartOfDishes(){

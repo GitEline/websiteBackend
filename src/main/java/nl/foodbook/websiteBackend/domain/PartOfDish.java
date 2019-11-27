@@ -37,7 +37,12 @@ public class PartOfDish {
     public void setQuantity(double quantity) {
         this.quantity = quantity;
     }
-
+    public Recipe getRecipe() {
+        return recipe;
+    }
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
+    }
 
 
     public PartOfDish() {

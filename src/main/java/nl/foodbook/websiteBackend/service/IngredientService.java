@@ -1,7 +1,6 @@
 package nl.foodbook.websiteBackend.service;
 
 import nl.foodbook.websiteBackend.domain.Ingredient;
-import nl.foodbook.websiteBackend.domain.Recipe;
 import nl.foodbook.websiteBackend.repository.IngredientRepository;
 import nl.foodbook.websiteBackend.repository.PartOfDishRepository;
 import org.springframework.beans.factory.annotation.Autowired;

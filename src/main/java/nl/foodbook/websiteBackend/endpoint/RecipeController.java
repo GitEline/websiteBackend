@@ -30,7 +30,7 @@ public class RecipeController {
         return recipeService.findByRecipeId(recipeId);
     }
 
-    @GetMapping(path = "/recipe/recipeTitle/{recipeTitle}")
+    @GetMapping(path = "/recipe/recipetitle/{recipeTitle}")
     public Iterable<Recipe> findByRecipeTitle(@PathVariable String recipeTitle){
         return recipeService.findByRecipeTitle(recipeTitle);
     }

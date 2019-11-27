@@ -7,6 +7,6 @@ import nl.foodbook.websiteBackend.domain.PartOfDish;
 @Repository
 public interface PartOfDishRepository extends CrudRepository<PartOfDish, Long> {
 
-
+  Iterable<PartOfDish> findByRecipeRecipeId(Long recipeId);
 
 }

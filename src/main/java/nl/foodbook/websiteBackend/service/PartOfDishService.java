@@ -20,6 +20,12 @@ public class PartOfDishService {
         return partOfDishRepository.findAll();
     }
 
+    public Iterable<PartOfDish> findByRecipeRecipeId(Long recipeId){
+        return partOfDishRepository.findByRecipeRecipeId(recipeId);
+    }
+
+
+
     public PartOfDish addPartOfDish(PartOfDish partOfDish){
         return partOfDishRepository.save(partOfDish);
     }
