@@ -1,14 +1,12 @@
 package nl.foodbook.websiteBackend.endpoint;
 
-
 import nl.foodbook.websiteBackend.domain.Ingredient;
-import nl.foodbook.websiteBackend.domain.Recipe;
 import nl.foodbook.websiteBackend.service.IngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
+
 
 @CrossOrigin(origins = "*")
 @RestController

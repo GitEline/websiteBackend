@@ -35,7 +35,6 @@ public class RecipeController {
         return recipeService.findByRecipeTitle(recipeTitle);
     }
 
-
     @GetMapping(path = "/recipe/recipetitlelike/{recipeTitle}")
     public Iterable<Recipe> findByRecipeTitleLike(@PathVariable String recipeTitle){
         return recipeService.findByRecipeTitleLike(recipeTitle);
