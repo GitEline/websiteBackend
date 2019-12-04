@@ -28,8 +28,8 @@ public class PartOfDishController {
     }
 
     @PostMapping("/partofdish")
-    void addPartOfDish(@RequestBody PartOfDish partOfDish) {
-        partOfDishService.addPartOfDish(partOfDish);
+    PartOfDish addPartOfDish(@RequestBody PartOfDish partOfDish) {
+        return partOfDishService.addPartOfDish(partOfDish);
     }
 
 

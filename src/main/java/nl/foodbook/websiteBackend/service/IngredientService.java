@@ -28,7 +28,7 @@ public class IngredientService {
         return ingredientRepository.findById(ingredientId);
     }
 
-    public Iterable<Ingredient> findByIngredientName(String nameIngredient){
+    public Iterable<Ingredient> findByNameIngredient(String nameIngredient){
         return ingredientRepository.findByNameIngredient(nameIngredient);
     }
 

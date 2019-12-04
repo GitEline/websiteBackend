@@ -38,7 +38,9 @@ public class RecipeService {
 
 
     public Recipe addRecipe(Recipe recipe){
-        return recipeRepository.save(recipe);
+        Recipe recipetest = recipeRepository.save(recipe);
+        System.out.println(recipetest.getRecipeId() + recipetest.getRecipeTitle());
+        return recipetest;
     }
 
 

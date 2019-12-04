@@ -32,13 +32,13 @@ public class IngredientController {
 
     @GetMapping(path = "/ingredient/nameingredient/{nameIngredient}")
     public Iterable<Ingredient> findByIngredientName(@PathVariable String nameIngredient){
-        return ingredientService.findByIngredientName(nameIngredient);
+        return ingredientService.findByNameIngredient(nameIngredient);
     }
 
 
         @PostMapping("/ingredient")
-    public void addIngredient(@RequestBody Ingredient ingredient) {
-        ingredientService.addIngredient(ingredient);
+    public Ingredient addIngredient(@RequestBody Ingredient ingredient) {
+        return ingredientService.addIngredient(ingredient);
     }
 
 

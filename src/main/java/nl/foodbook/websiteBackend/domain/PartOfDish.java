@@ -28,8 +28,7 @@ public class PartOfDish {
     public String getUnit() {
         return unit;
     }
-    public void setUnit(Unit unit) {
-        this.unit = unit.getValue();
+    public void setUnit(String unit) { this.unit = unit;
     }
     public double getQuantity() {
         return quantity;
@@ -48,11 +47,11 @@ public class PartOfDish {
     public PartOfDish() {
     }
 
-    public PartOfDish(Ingredient ingredient, Recipe recipe, Unit unit, double quantity) {
+    public PartOfDish(Ingredient ingredient, Recipe recipe, String unit, double quantity) {
         this();
         this.ingredient = ingredient;
         this.recipe = recipe;
-        this.unit = unit.getValue();
+        this.unit = unit;
         this.quantity = quantity;
     }
 

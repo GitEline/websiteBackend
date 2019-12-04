@@ -8,5 +8,6 @@ import nl.foodbook.websiteBackend.domain.PartOfDish;
 public interface PartOfDishRepository extends CrudRepository<PartOfDish, Long> {
 
   Iterable<PartOfDish> findByRecipeRecipeId(Long recipeId);
+//  Iterable<PartOfDish> findByRecipeIngredientTags(String[] tags);
 
 }
