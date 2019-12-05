@@ -19,13 +19,20 @@ public class PartOfDishController {
     }
 
     @GetMapping("/partofdish/{recipeId}")
-    public Iterable<PartOfDish> findByRecipe(@PathVariable Long recipeId){return partOfDishService.findByRecipeRecipeId(recipeId);
+    public Iterable<PartOfDish> findByRecipe(@PathVariable Long recipeId){
+        return partOfDishService.findByRecipeRecipeId(recipeId);
     }
 
     @GetMapping("/partofdish")
     public List<PartOfDish> getPartOfDishes(){
         return (List<PartOfDish>) partOfDishService.findAllPartOfDish();
     }
+
+    @GetMapping("/partofdish/tags/{tags}")
+    public java.util.stream.Stream<PartOfDish> findByRecipeIngredientTags(@PathVariable String[] tags){
+        return partOfDishService.findByRecipeIngredientTags(tags);
+    }
+
 
     @PostMapping("/partofdish")
     PartOfDish addPartOfDish(@RequestBody PartOfDish partOfDish) {

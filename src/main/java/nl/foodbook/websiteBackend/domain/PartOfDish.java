@@ -1,6 +1,9 @@
 package nl.foodbook.websiteBackend.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Entity
 public class PartOfDish {
@@ -55,5 +58,23 @@ public class PartOfDish {
         this.quantity = quantity;
     }
 
+
+    public boolean checkTags(PartOfDish pod, String[] tags){
+        boolean containstag = false;
+        List<String> tagsToFilter = Arrays.asList(tags);
+        List<String> tagsOfIngredient = new ArrayList<>();
+        String[] tagsInIngredient = pod.ingredient.getTags();
+        for (String tagsIngredient: tagsInIngredient) {
+            tagsOfIngredient.add(tagsIngredient);
+        }
+
+        for(String tag : tagsToFilter){
+            if (tagsOfIngredient.contains(tag)){
+                containstag = true;
+                break;
+            }
+        }
+        return containstag;
+    }
 
 }
